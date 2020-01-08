@@ -165,7 +165,6 @@ ruleMenu,logManagementMenu,monitorMenu,monitor2Menu,script,messageMenu,scenarioM
     });
     function getAlert() {
         var $ = layui.$;
-        var layer=layui.layer;
         //后面就跟你平时使用jQuery一样
         var ajaxTimeout = $.ajax({
             url:'http://localhost:8088/api/notice/alert/',  //请求的URL
@@ -173,7 +172,7 @@ ruleMenu,logManagementMenu,monitorMenu,monitor2Menu,script,messageMenu,scenarioM
             type : 'get',  //请求方式，get或post
             dataType:'text',//返回的数据格式
             success:function(data){ //请求成功的回调函数
-                layer.msg(data);
+                layui.layer.msg(data);
             },
             complete : function(XMLHttpRequest,status){ //请求完成后最终执行参数
                 getAlert();
